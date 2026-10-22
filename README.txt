@@ -4,12 +4,20 @@
 公開サイト: https://harr-m.github.io/kosen-qr-walk/
 ソース: https://github.com/harr-m/kosen-qr-walk
 
-ゲーム性なしの別案（warning.html）
-https://harr-m.github.io/kosen-qr-walk/warning.html
-QRを開くとすぐに警告と種明かしを読む、1ページ完結の啓発展示です。
-ゲーム、クイズ、点数、カメラ、入力欄、JavaScriptはありません。
-この別案を編集する場合はwarning.htmlを変更してください。
-既存のindex.htmlと6体験のQRの行き先は変更していません。
+読むだけの4カ所向け展示（2026-10-23追加）
+一覧: https://harr-m.github.io/kosen-qr-walk/notice/
+単位が落ちています。: https://harr-m.github.io/kosen-qr-walk/notice/credit.html
+正気OSを更新してください。: https://harr-m.github.io/kosen-qr-walk/notice/update.html
+無料Wi-Fi、あります。: https://harr-m.github.io/kosen-qr-walk/notice/wifi.html
+見出しなしのQR: https://harr-m.github.io/kosen-qr-walk/notice/mystery.html
+一般来場者向けの言葉遣いで、読むだけで完結します。ゲーム、クイズ、点数、カメラ、入力欄はありません。
+OSだけ30秒のカウントダウンがありますが、期限後も何も実行せず、更新・ダウンロードはしません。
+JavaScript無効でも全ての文章が読めます（カウントダウンだけ動きません）。
+更新はnotice/内の各HTMLを編集してmainへコミットしてください。公開パスを変えなければQRを再印刷せずに更新できます。
+update.htmlのJavaScriptを変える場合は、冒頭CSPのscript-srcのSHA-256ハッシュも更新してください。本文だけの編集では不要です。
+notice-print/には4種類のPNG/SVGと、A4縦2枚ずつ・全2ページの印刷用PDFを配置します。
+4枚目は見出しを付けず、学生制作の表記とURLを下部に小さく載せています。
+以前のwarning.htmlも穏やかな文章に更新しました。既存のindex.htmlと6体験のQRの行き先は変更していません。
 
 学生制作の架空体験です。学校の手続き案内や学校公認を示すものではありません。
 来場者のログイン・アプリ導入は不要です。HTML/CSS/JavaScriptだけで動きます。
@@ -31,7 +39,7 @@ print/kosen-qr-掲示用.pdf: A4縦、1ページ2枚、計3ページ。白黒印
 print/公開URL一覧.txt: QR、印字URL、PDFリンクと共通のURL一覧。
 
 更新方法
-1. GitHubのこのリポジトリでindex.htmlを開き、鉛筆ボタンから編集します。
+1. GitHubのこのリポジトリで、読むだけの展示はnotice/内の各HTML、元の6体験はindex.htmlを開き、鉛筆ボタンから編集します。
 2. mainブランチへコミットします。ローカル編集なら同じmainへgit pushします。
 3. Actionsの「pages build and deployment」が成功し、サイトに反映されたことを確認します。
 公開元はmainブランチのルートです。HTTPSを有効にしています。
