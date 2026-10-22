@@ -1,0 +1,12 @@
+苫小牧高専祭 QR体験展示 - 公開URL一覧
+
+入口: https://harr-m.github.io/kosen-qr-walk/
+
+QRの符号化URL、印刷物のURL、PDFのリンクは次の同一URLです。
+
+credit	無料単位配布センター	https://harr-m.github.io/kosen-qr-walk/#credit
+update	正気OSの緊急更新	https://harr-m.github.io/kosen-qr-walk/#update
+wifi	最強無料Wi-Fi	https://harr-m.github.io/kosen-qr-walk/#wifi
+sticker	このQR、二枚あります	https://harr-m.github.io/kosen-qr-walk/#sticker
+unit	空中の単位をつかまえる	https://harr-m.github.io/kosen-qr-walk/#unit
+reason	ここに理性ねむる	https://harr-m.github.io/kosen-qr-walk/#reason
