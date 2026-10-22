@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="会場のあちこちに、小さな異変。QRから始まる悪ふざけ4本と、カメラで遊ぶ2本。限界実験室の体験展示。">
+  <title>限界散歩 | 高専祭のQRあそび</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSJ3aGl0ZSIvPjx0ZXh0IHg9IjMyIiB5PSI0NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDQiIGZpbGw9ImJsYWNrIj7pmZA8L3RleHQ+PC9zdmc+" type="image/svg+xml">
+  <style>
+/* 普通の白いページ。操作に必要なところだけ整える。 */
+*{box-sizing:border-box}:root{color-scheme:light}html{background:white;color:black}body{margin:0;font-family:Arial,'Noto Sans JP',sans-serif;font-size:16px;line-height:1.7}a{color:#0000ee;text-decoration:underline}a:visited{color:#551a8b}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{cursor:default}[hidden]{display:none!important}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid #0000ee;outline-offset:3px}h1{font-size:28px;margin:24px 0 16px;line-height:1.5}h2{font-size:21px;margin:28px 0 12px;line-height:1.5}h3{font-size:18px}p{margin:12px 0}small{font-size:13px}code{overflow-wrap:anywhere}
+.f-skip{position:fixed;top:-100px;left:10px;padding:6px;background:white;z-index:30}.f-skip:focus{top:5px}.f-topbar{position:sticky;top:0;background:white;border-bottom:1px solid #aaa;z-index:20}.f-header,.f-disclosure,#field-main,.f-footer{max-width:900px;margin-inline:auto;padding-inline:16px}.f-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-block:8px}.f-brand{font-size:17px;font-weight:bold}.f-header-actions{display:flex;gap:8px}.f-disclosure{font-size:12px;padding-bottom:8px}#field-main{min-height:55vh;padding-bottom:24px;outline:none}
+.f-button,.f-secondary,.f-mini{display:inline-block;font-family:inherit;color:black;background:#efefef;border:1px solid #888;border-radius:2px;box-shadow:none;padding:7px 12px;font-size:15px;line-height:1.6;text-align:center}.f-button:active,.f-secondary:active,.f-mini:active{background:#ddd}.f-mini{padding:5px 9px;font-size:13px}.f-list{padding-left:26px}.f-list li{margin-bottom:19px}.f-list a{font-size:17px}.f-list p{font-size:15px;margin:3px 0 0}.f-memo{border-top:1px solid #aaa;margin-top:28px}.f-memo p,.f-sources{font-size:14px}.f-sources{margin-top:24px}.f-sources summary{cursor:pointer}.f-stage-shell{max-width:660px}.f-stage-titlebar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid #aaa;margin-bottom:20px;padding-block:15px}.f-stage-titlebar h1{font-size:23px;margin:0}.f-footer{border-top:1px solid #aaa;padding-block:18px;font-size:13px}.f-footer p{margin:6px 0}.f-noscript{margin:20px}
+.reduce-motion *,.reduce-motion *::before,.reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}@media(max-width:450px){h1{font-size:25px}.f-header,.f-disclosure,#field-main,.f-footer{padding-inline:12px}.f-stage-titlebar h1{font-size:20px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+  <style>
+/* 説明も架空の案内も、白黒の簡単なページにする。 */
+.scn-root{max-width:620px;color:black;line-height:1.7}.scn-root h2{font-size:27px;line-height:1.5;margin:18px 0}.scn-root h3{font-size:20px}.scn-root p{font-size:15px}.scn-progress{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:13px;margin-bottom:15px}.scn-kicker{display:block;font-size:13px}.scn-wide{width:100%;min-height:44px;white-space:normal}.scn-plain-button{display:block;color:#0000ee;background:white;border:0;text-decoration:underline;padding:12px 3px;margin:6px auto;font-size:14px}.scn-choice-stack,.scn-wifi-options{display:grid;gap:12px}.scn-choice-stack>button{min-height:44px;white-space:normal}.scn-root .scn-microcopy{font-size:12px;margin:16px 0}.scn-choice-prompt{font-weight:bold}
+.scn-credit-promo,.scn-credit-request,.scn-update-console,.scn-settings,.scn-wifi-poster,.scn-wifi-portal,.scn-reveal{border:1px solid #888;padding:18px;background:white}.scn-credit-ribbon,.scn-terminal-bar,.scn-wifi-poster-top,.scn-wifi-ticket-header{border-bottom:1px solid #aaa;padding-bottom:9px;font-size:14px}.scn-credit-stars,.scn-terminal-lights,.scn-update-icon,.scn-wifi-symbol,.scn-settings-icon,.scn-tape{display:none}.scn-credit-promo h2 em{font-style:normal}.scn-credit-prize{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:16px 0}.scn-credit-prize strong{font-size:48px;line-height:1}.scn-credit-prize b{font-size:24px}.scn-credit-prize i{font-size:24px;font-style:normal}.scn-credit-ticket{border-top:1px dashed #999;padding-top:10px;margin-bottom:20px}.scn-credit-ticket>span,.scn-credit-ticket>strong,.scn-credit-ticket>small{display:block}.scn-credit-ticket>span,.scn-credit-ticket>small{font-size:12px}
+.scn-url-card{width:100%;padding:12px;color:black;background:#eee;border:1px solid #888;border-radius:2px;text-align:left;overflow-wrap:anywhere}.scn-url-card>span,.scn-url-card>strong,.scn-url-card>small{display:block}.scn-url-card>strong{font-family:monospace;font-size:17px}.scn-url-card>span,.scn-url-card>small{font-size:12px}.scn-url-detail{padding:10px;border:1px solid #aaa;border-top:0}.scn-url-detail p{font-size:13px}.scn-credential-demand{border:1px solid #888;padding:14px;margin-top:20px}.scn-credential-demand>span,.scn-credential-demand>strong,.scn-credential-demand>small{display:block}.scn-credential-demand>strong{font-size:21px}.scn-fake-secret{font-size:24px;margin-block:8px}
+.scn-terminal-bar>span:last-child{display:none}.scn-update-badge{display:block;margin-top:14px;font-size:12px}.scn-update-clock{border-block:1px solid #aaa;padding-block:12px;margin-block:16px}.scn-update-clock>span,.scn-update-clock strong,.scn-update-clock small{display:block}.scn-update-clock strong{font:bold 36px/1.5 monospace}.scn-update-filename{margin-block:18px;overflow-wrap:anywhere}.scn-update-filename>span{display:block;font-size:13px}.scn-update-filename>code{font-size:15px}.scn-settings-breadcrumb{border-block:1px solid #aaa;padding:8px 0;font-size:14px}.scn-settings-breadcrumb>span{padding-inline:8px}.scn-settings-row{border-bottom:1px solid #ccc;padding:12px 0}.scn-settings-row>span,.scn-settings-row>strong{display:block}.scn-settings-row>span{font-size:13px}
+.scn-wifi-poster-top>span{margin-left:10px;font-size:12px}.scn-wifi-specs{display:grid;grid-template-columns:85px minmax(0,1fr);gap:10px;margin-block:18px;border-block:1px solid #aaa;padding:12px 0}.scn-wifi-specs>span{font-size:13px}.scn-wifi-specs>strong{overflow-wrap:anywhere}.scn-wifi-ticket-header>span{display:none}.scn-wifi-ticket-header>strong,.scn-wifi-ticket-header>small{display:block}.scn-wifi-options button{border:1px solid #888;background:#efefef;color:black;text-align:left;padding:12px;border-radius:2px}.scn-wifi-options button>span,.scn-wifi-options button>strong,.scn-wifi-options button>small{display:block}.scn-wifi-options button>strong{font-size:19px;overflow-wrap:anywhere}.scn-wifi-options button>span,.scn-wifi-options button>small{font-size:12px}
+.scn-noticeboard{padding:15px;background:#eee;border:1px solid #999;overflow:hidden}.scn-paper-poster{background:white;border:1px solid #888;padding:12px}.scn-poster-label{display:block;text-align:center;font-size:12px}.scn-paper-poster h3{text-align:center;margin:10px 0 15px}.scn-layer-window{position:relative;height:245px;max-width:290px;margin-inline:auto}.scn-sticker-bottom,.scn-sticker-top{position:absolute;inset:0;padding:10px;border:1px solid black;background:white;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}.scn-sticker-top{z-index:2;background:#e7e7e7;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transform-origin:15% 12%;transition:transform .35s ease,opacity .35s ease}.scn-sticker-top:active{cursor:grabbing}.scn-sticker-bottom>span,.scn-sticker-top>span:first-child{font-size:12px}.scn-sticker-bottom svg,.scn-sticker-top svg{width:112px;height:112px;flex-shrink:0}.scn-sticker-bottom>strong,.scn-sticker-top>strong{font-size:17px}.scn-sticker-bottom>code,.scn-sticker-top>code{font-size:13px;overflow-wrap:anywhere}.scn-paper-corner{position:absolute;right:0;bottom:0;width:28px;height:28px;border-top:1px solid #888;border-left:1px solid #888;background:white}.scn-root .scn-poster-footnote{text-align:center;font-size:11px}.scn-peel-label{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:14px}.scn-peel-range{width:100%;min-height:44px;accent-color:#555;touch-action:pan-y}.scn-peel-status{min-height:45px}.scn-sticker-decision{border-top:1px solid #aaa;padding-top:16px}.scn-url-comparison{border-bottom:1px solid #aaa;padding-bottom:12px}.scn-url-comparison>span,.scn-url-comparison b{display:block}.scn-url-comparison>span{margin-bottom:7px;font-size:13px}
+.scn-result-number{border-bottom:1px solid #aaa;padding-bottom:10px;margin-bottom:14px;font-weight:bold}.scn-evidence{margin-block:18px}.scn-evidence p{display:flex;gap:8px}.scn-evidence p>span:first-child{flex-shrink:0}.scn-one-thing{border-block:1px solid black;padding-block:13px;margin-block:20px}.scn-one-thing>span{display:block;font-size:13px;margin-bottom:7px}.scn-one-thing>strong{display:block;font-size:19px}.scn-root .scn-afterthought{font-size:13px;margin-bottom:22px}.scn-reduced .scn-sticker-top{transition:none}@media(max-width:380px){.scn-credit-promo,.scn-credit-request,.scn-update-console,.scn-settings,.scn-wifi-poster,.scn-wifi-portal,.scn-reveal{padding:13px}.scn-root h2{font-size:24px}.scn-noticeboard{padding:9px}.scn-paper-poster{padding:8px}}
+
+</style>
+  <style>
+.cam-experience{--cam-paper:#fff;--cam-ink:#000;--cam-acid:#d7ff3f;--cam-lilac:#c4adff;color:#000;background:#fff;line-height:1.75;font-size:14px}
+.cam-experience [hidden]{display:none!important}
+.cam-heading{margin-bottom:23px}
+.cam-kicker{font:inherit;font-size:12px;letter-spacing:normal;margin:0 0 8px}
+.cam-heading h2{font-size:26px;font-weight:700;line-height:1.5;letter-spacing:normal;margin:0 0 14px}
+.cam-heading>p:last-child{font-size:14px;line-height:1.9;margin:0}
+.cam-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.9fr);gap:21px;align-items:start}
+.cam-stage-wrap{min-width:0}
+.cam-stage{position:relative;aspect-ratio:4/5;min-height:340px;overflow:hidden;border:1px solid #000;border-radius:0;isolation:isolate;background:#dce2d1}
+.cam-sample,.cam-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cam-sample svg{display:block;width:100%;height:100%;max-width:none}
+.cam-video{z-index:1}
+.cam-stage-top{position:absolute;top:14px;left:13px;right:13px;display:flex;align-items:center;justify-content:space-between;gap:8px;z-index:5;pointer-events:none}
+.cam-background-label,.cam-stage-counter{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#000;border:1px solid #000;border-radius:0;padding:5px 7px;font-size:11px;font-weight:400;line-height:1.5;box-shadow:none}
+.cam-background-label i{width:6px;height:6px;display:block;border-radius:0;background:#aaa}
+.cam-background-label b{font-size:inherit;font-weight:inherit}
+.cam-is-live .cam-background-label i{background:#000}
+.cam-stage-counter{background:#fff;white-space:nowrap}
+.cam-object{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--cam-scale,1));transform-origin:center;box-sizing:border-box;user-select:none;-webkit-user-select:none}
+.cam-unit-object{padding:0;aspect-ratio:1/1.15;background:transparent;border:0;border-radius:16px;cursor:pointer;color:var(--cam-ink);touch-action:manipulation;opacity:1!important;transition:left .32s ease,top .32s ease,width .2s ease}
+.cam-unit-object:focus-visible{outline:3px solid #000;outline-offset:8px}
+.cam-unit-float{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;border:3px solid var(--cam-ink);border-radius:15px;background:var(--cam-acid);box-shadow:6px 8px 0 #191a17,0 18px 32px #191a1720;transform:rotate(-7deg);animation:cam-unit-float 3s ease-in-out infinite}
+.cam-unit-object:hover .cam-unit-float{background:#e8ff94}
+.cam-credit-top{font:700 clamp(6px,1.2vw,9px)/1.5 monospace;letter-spacing:.05em;position:absolute;top:14px;left:9px;right:9px;text-align:center;border-bottom:1px solid #191a1740;padding-bottom:8px}
+.cam-credit-word{font-size:clamp(37px,5.7vw,65px);font-weight:950;letter-spacing:-.09em;line-height:1.1;margin-top:5px;padding-right:5px}
+.cam-credit-orbit{position:absolute;right:-18px;top:48px;border:2px solid var(--cam-ink);border-radius:50%;width:40px;height:40px;background:var(--cam-lilac);display:grid;place-items:center;font-size:28px;line-height:1;transform:rotate(20deg)}
+.cam-credit-bottom{position:absolute;bottom:12px;left:9px;right:9px;text-align:center;font:700 clamp(6px,1.1vw,9px)/1.5 monospace;letter-spacing:.02em}
+.cam-unit-finished .cam-unit-float{background:var(--cam-lilac);animation:none;transform:rotate(4deg)}
+.cam-unit-finished .cam-credit-word{font-family:monospace;font-size:89px;letter-spacing:-.06em}
+.cam-unit-finished .cam-credit-orbit{background:var(--cam-acid)}
+.cam-tomb-object{cursor:grab;touch-action:none;filter:drop-shadow(3px 7px 0 #191a1722)}
+.cam-tomb-object svg{display:block;width:100%;height:auto;overflow:visible;pointer-events:none}
+.cam-tomb-object.cam-is-dragging{cursor:grabbing}
+.cam-flowers{opacity:0;transform:translateY(12px);transform-origin:center}
+.cam-offered .cam-flowers{opacity:1;transform:translateY(0);animation:cam-flowers-rise .6s ease-out both}
+.cam-scene-sticker{position:absolute;right:13px;bottom:70px;z-index:2;display:block;border:1px solid #000;border-radius:0;background:#fff;color:#000;font-size:11px;line-height:1.5;font-weight:400;text-align:left;transform:none;padding:7px;pointer-events:none}
+.cam-reason-mode .cam-scene-sticker{background:#fff}
+.cam-stage-caption{position:absolute;left:12px;right:12px;bottom:13px;z-index:5;border:1px solid #000;border-radius:0;padding:8px 7px;background:#fff;color:#000;font-size:11px;font-weight:400;text-align:center;line-height:1.65;margin:0;pointer-events:none}
+.cam-overlay-note{font-size:12px;line-height:1.75;margin:11px 1px 0;color:#000}
+.cam-panel{min-width:0;border:1px solid #aaa;background:#fff;border-radius:0;padding:16px}
+.cam-control-kicker{display:block;font:inherit;font-size:13px;font-weight:700;letter-spacing:normal;margin-bottom:10px}
+.cam-camera-actions{display:flex;gap:8px;flex-wrap:wrap}
+.cam-experience .f-button,.cam-experience .f-secondary{min-height:44px;border:1px solid #000;border-radius:0;padding:9px 12px;font-family:inherit;font-size:13px;font-weight:400;line-height:1.6;cursor:pointer;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:10px;color:#000;background:#fff;box-shadow:none}
+.cam-experience .f-button{background:#fff;color:#000}
+.cam-experience .f-secondary{background:#fff;color:#000}
+.cam-experience .f-button:disabled,.cam-experience .f-secondary:disabled{opacity:.55;cursor:default}
+.cam-experience button:focus-visible,.cam-experience input:focus-visible{outline:2px solid #000;outline-offset:4px}
+.cam-camera-start{flex:1;white-space:nowrap}
+.cam-camera-stop{flex-shrink:0;white-space:nowrap}
+.cam-permission-note{font-size:12px;font-weight:400;line-height:1.8;margin:11px 0 7px}
+.cam-camera-status{font-size:12px;line-height:1.85;color:#000;background:#fff;padding:0;border-radius:0;min-height:0;margin:0}
+.cam-mission,.cam-placement{margin-top:22px;border-top:1px solid #aaa;padding-top:18px}
+.cam-mission>strong{display:block;font-size:18px;font-weight:700;line-height:1.5;letter-spacing:normal}
+.cam-credit-slots{display:flex;gap:9px;margin-top:14px}
+.cam-credit-slots>span{display:grid;place-items:center;width:43px;height:47px;border:1px dashed #000;border-radius:0;font-size:23px;line-height:1;font-weight:400;color:#000;background:#fff}
+.cam-credit-slots>span.cam-collected{background:#fff;border:1px solid #000;color:#000;font-weight:700;box-shadow:none}
+.cam-mission>p{font-size:12px;line-height:1.85;color:#000;margin:15px 0 0}
+.cam-size-control{margin-top:21px}
+.cam-range-label{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;font-weight:400;margin-bottom:6px}
+.cam-range-label output{font:inherit;letter-spacing:normal}
+.cam-range{display:block;width:100%;height:32px;min-height:32px;accent-color:var(--cam-ink);margin:0;cursor:pointer}
+.cam-range-ends{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#000;margin:2px 0 17px}
+.cam-placement .cam-range-ends:last-child,.cam-size-control .cam-range-ends{margin-bottom:0}
+.cam-experience .cam-offer,.cam-experience .cam-retry{width:100%;margin-top:20px;justify-content:space-between;min-height:48px}
+.cam-offer>span{font-size:21px;line-height:1}
+.cam-offer-note{font-size:12px;color:#000;line-height:1.8;margin:9px 0 0}
+.cam-play-status{margin:19px 0 0;border:0;border-top:1px solid #aaa;border-radius:0;padding:13px 0 0;background:#fff;color:#000;font-size:14px;font-weight:400;line-height:1.85}
+.cam-result{padding:16px 0;margin-top:17px;border:0;border-top:1px solid #000;border-radius:0;box-shadow:none;background:#fff;color:#000}
+.cam-reason-mode .cam-result{background:#fff}
+.cam-result-kicker{font:inherit;font-size:13px;font-weight:700;letter-spacing:normal}
+.cam-result h3{font-size:22px;line-height:1.5;font-weight:700;letter-spacing:normal;margin:7px 0 10px}
+.cam-result h3 strong{font-family:inherit;font-size:28px;line-height:1.2;letter-spacing:normal;vertical-align:baseline;margin-left:7px}
+.cam-result p{font-size:14px;line-height:1.9;margin:0}
+.cam-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:24px;padding-top:17px;border-top:1px solid #aaa}
+.cam-footer>p{font-size:12px;line-height:1.8;color:#000;margin:0;flex:1;min-width:160px}
+.cam-home{flex-shrink:0}
+.cam-reduced .cam-unit-float,.cam-reduced .cam-flowers{animation:none!important}
+.cam-reduced .cam-object{transition:none!important}
+.cam-reduced .cam-flowers{transform:none}
+.reduce-motion .cam-unit-float,.reduce-motion .cam-flowers{animation:none!important}
+.reduce-motion .cam-object{transition:none!important}
+.reduce-motion .cam-flowers{transform:none}
+@keyframes cam-unit-float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-9px) rotate(-3deg)}}
+@keyframes cam-flowers-rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:860px){.cam-layout{gap:16px;grid-template-columns:minmax(0,1.1fr) minmax(240px,1fr)}.cam-panel{padding:16px}.cam-camera-actions{flex-direction:column}.cam-camera-actions>button{width:100%}.cam-stage-top{top:11px;left:10px;right:10px;gap:5px}.cam-background-label,.cam-stage-counter{font-size:10px;padding:5px 6px}.cam-credit-top{font-size:7px}.cam-credit-bottom{font-size:7px}}
+@media(max-width:690px){.cam-layout{grid-template-columns:1fr;gap:16px}.cam-heading{margin-bottom:19px}.cam-heading h2{font-size:24px}.cam-kicker{font-size:12px}.cam-heading>p:last-child{font-size:14px}.cam-stage{min-height:330px;border-radius:0}.cam-panel{padding:15px}.cam-camera-actions{flex-direction:row}.cam-camera-actions>button{width:auto}.cam-credit-word{font-size:52px}.cam-credit-top{font-size:8px}.cam-credit-bottom{font-size:7px}.cam-stage-top{top:12px;left:11px;right:11px}.cam-background-label,.cam-stage-counter{font-size:10px}.cam-scene-sticker{font-size:10px;right:11px;bottom:73px}.cam-stage-caption{font-size:10px;padding:7px 6px;bottom:12px}.cam-overlay-note{font-size:12px}.cam-mission>strong{font-size:18px}.cam-play-status{font-size:14px;padding:12px 0 0}.cam-result{padding:16px 0}.cam-result h3{font-size:21px}.cam-result h3 strong{font-size:28px}.cam-result p{font-size:14px}.cam-footer{gap:14px}.cam-footer>p{font-size:12px}.cam-experience .cam-home{width:100%;justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){.cam-unit-float,.cam-flowers{animation:none!important}.cam-object{transition:none!important}.cam-flowers{transform:none}}
+
+</style>
+
+
+
+</head>
+<body>
+  <a class="f-skip" href="#field-main">体験へ進む</a>
+  <div class="f-topbar"><header class="f-header">
+    <a class="f-brand" href="#">限界散歩・一覧へ</a>
+    <div class="f-header-actions"><button id="field-motion" class="f-mini" aria-pressed="false">動き <span>あり</span></button><button id="field-exit" class="f-mini" hidden>一覧へ</button></div>
+  </header>
+  <div class="f-disclosure">高専祭・学生制作の架空体験です。学校の手続き案内ではありません。</div></div>
+  <main id="field-main" tabindex="-1"></main>
+  <footer class="f-footer"><p>限界散歩 / 高専祭向け・学生制作の試作</p></footer>
+  <noscript><p class="f-noscript">この体験にはJavaScriptが必要です。</p></noscript>
+<script>
+/* Fictional, browser-local QR booth scenarios. No credentials, network, or device changes. */
+(function () {
+  'use strict';
+  window.FieldModules = window.FieldModules || {};
+  var clamp = function (value, min, max) { return Math.max(min, Math.min(max, value)); };
+  var arrow = '<span aria-hidden="true">↗</span>';
+  function setup(container, api, id) {
+    var abort = new AbortController();
+    var timers = new Set();
+    var alive = true;
+    var completed = false;
+    function on(node, type, callback, options) { node.addEventListener(type, callback, Object.assign({ signal: abort.signal }, options || {})); }
+    function stopTimers() { timers.forEach(function (timer) { clearInterval(timer); }); timers.clear(); }
+    function quiet() { return Boolean(api.reduced && api.reduced()); }
+    function render(html) {
+      container.innerHTML = '<div class="scn-root scn-' + id + (quiet() ? ' scn-reduced' : '') + '">' + html + '</div>';
+    }
+    function sound() { if (alive && api.sound) api.sound(); }
+    function focus(selector) { var node = container.querySelector(selector); if (node) node.focus({ preventScroll: true }); }
+    function reveal(config) {
+      if (!alive || completed) return;
+      completed = true;
+      stopTimers();
+      render('<section class="scn-reveal" tabindex="-1"><div class="scn-result-number">' + config.mark + '</div><span class="scn-kicker">種明かし</span><h2>' + config.title + '</h2><p class="scn-result-line">' + config.line + '</p><div class="scn-evidence">' + config.evidence.map(function (item) { return '<p><span aria-hidden="true">↳</span><span>' + item + '</span></p>'; }).join('') + '</div><div class="scn-one-thing"><span>持ち帰る知識は、1つ。</span><strong>' + config.lesson + '</strong></div><p class="scn-afterthought">' + config.afterthought + '</p><button type="button" class="f-button scn-wide scn-finish">持ち帰った。次の展示へ ' + arrow + '</button></section>');
+      on(container.querySelector('.scn-finish'), 'click', function () { if (alive) api.home(); });
+      sound();
+      api.complete(id);
+      focus('.scn-reveal');
+    }
+    return {
+      on: on, render: render, sound: sound, focus: focus, reveal: reveal, quiet: quiet,
+      $: function (selector) { return container.querySelector(selector); },
+      every: function (callback, interval) { var timer = setInterval(function () { if (alive && !completed) callback(); }, interval); timers.add(timer); return timer; },
+      stopTimers: stopTimers,
+      alive: function () { return alive && !completed; },
+      close: function () { alive = false; stopTimers(); abort.abort(); }
+    };
+  }
+
+  window.FieldModules.credit = function (container, api) {
+    var game = setup(container, api, 'credit');
+    var opened = false;
+    game.render('<div class="scn-progress"><span>01 / 誘惑を浴びる</span><span>目安 20秒</span></div><section class="scn-credit-promo"><div class="scn-credit-ribbon">無料単位配布センター <small>（架空）</small></div><div class="scn-credit-stars" aria-hidden="true">✦　✧　✦</div><p class="scn-credit-eyebrow">努力には、休暇を。</p><h2>単位、<br><em>落ちてます。</em></h2><div class="scn-credit-prize"><span>今だけ</span><strong>8</strong><b>単位</b><i>0円</i></div><p class="scn-credit-copy">レポートなし。試験なし。<br>根拠も、いまのところなし。</p><div class="scn-credit-ticket"><span>架空の配布券</span><strong>単位配布券</strong><small>※実際の単位は増えません。景気のよい絵です。</small></div><button type="button" class="f-button scn-wide scn-credit-claim">架空の8単位を受け取る ' + arrow + '</button><button type="button" class="scn-plain-button scn-credit-cautious">うますぎる。宛先から見てみる</button></section>');
+    function claim(cautious) {
+      if (opened || !game.alive()) return;
+      opened = true;
+      game.sound();
+      game.render('<div class="scn-progress"><span>02 / 受け取り条件を見る</span><span>単位は、まだ0</span></div><section class="scn-credit-request"><span class="scn-kicker">THE SMALL PRINT GOT INTERESTING.</span><h2>先に、こちらを<br>教えてください。</h2><p class="scn-credit-request-lead">配布窓口が急に欲しがり始めたもの。</p><button type="button" class="scn-url-card scn-credit-url" aria-expanded="false"><span>リンク先のURLを確認 ' + arrow + '</span><strong>tan-i-present.example</strong><small>完全な宛先を見る</small></button><div class="scn-url-detail" hidden><code>https://tan-i-present.example/claim</code><p>これは架空の宛先。「単位配布」という名前や見た目だけでは、学校の公式窓口か確認できません。</p></div><div class="scn-credential-demand"><span>受け取り条件</span><strong>学校のログイン用<br>パスワード</strong><div class="scn-fake-secret" aria-hidden="true">？ ？ ？ ？ ？ ？</div><small>この体験には入力欄はありません。</small></div><p class="scn-choice-prompt">ここまで来た。どうする？</p><div class="scn-choice-stack"><button type="button" class="f-button scn-credit-stop">単位と関係ある？ ここで止まる</button><button type="button" class="f-secondary scn-credit-continue">受け取りに必要そう。先へ進む</button></div><p class="scn-microcopy">どちらを選んでも、次は種明かしです。</p></section>');
+      var detail = game.$('.scn-url-detail');
+      function showUrl() { detail.hidden = !detail.hidden; game.$('.scn-credit-url').setAttribute('aria-expanded', String(!detail.hidden)); game.sound(); }
+      game.on(game.$('.scn-credit-url'), 'click', showUrl);
+      if (cautious) { detail.hidden = false; game.$('.scn-credit-url').setAttribute('aria-expanded', 'true'); }
+      function finish(stopped) {
+        game.reveal({
+          mark: '単位 ＋0',
+          title: stopped ? '単位より先に、<br>要求の変化を見抜いた。' : '景品は単位。<br>狙いは、別のところ。',
+          line: stopped ? '「もらえるもの」から「渡すもの」へ、視点が切り替わりました。' : 'ごほうびに目が行くのは自然です。今回は、受け取り条件が罠でした。',
+          evidence: ['<b>宛先：</b>表示名やデザインだけでは、公式窓口か分かりません。URLも確認材料に。', '<b>要求：</b>架空の景品を入口に、学校のパスワードを渡させようとする仕掛けでした。'],
+          lesson: 'うまい話の入力前に、公式の入口から確かめる。',
+          afterthought: '現実の単位は、現実の手続きで。非常に残念なお知らせです。'
+        });
+      }
+      game.on(game.$('.scn-credit-stop'), 'click', function () { finish(true); });
+      game.on(game.$('.scn-credit-continue'), 'click', function () { finish(false); });
+      game.focus('.scn-credit-url');
+    }
+    game.on(game.$('.scn-credit-claim'), 'click', function () { claim(false); });
+    game.on(game.$('.scn-credit-cautious'), 'click', function () { claim(true); });
+    return game.close;
+  };
+
+  window.FieldModules.update = function (container, api) {
+    var game = setup(container, api, 'update');
+    var remaining = 18;
+    var selected = false;
+    game.render('<div class="scn-progress"><span>01 / 架空の端末「脳内PC」</span><span>目安 20秒</span></div><section class="scn-update-console"><div class="scn-terminal-bar"><span class="scn-terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span><strong>正気OS / 架空の通知</strong><span>×</span></div><div class="scn-update-body"><span class="scn-update-badge">緊急度：自称</span><svg class="scn-update-icon" viewBox="0 0 180 120" aria-hidden="true"><path d="M90 9L173 108H7Z" fill="#d7ff3f" stroke="#d7ff3f" stroke-width="3" stroke-linejoin="round"/><path d="M84 43H96L94 76H86Z" fill="#191a17"/><circle cx="90" cy="91" r="6" fill="#191a17"/></svg><h2>正気OS<br>緊急更新</h2><p class="scn-update-message">このままでは、<strong>正気のままです。</strong><br>今すぐ「正気パッチ」を適用してください。</p><div class="scn-update-clock"><span>なぜか急がされる残り時間</span><strong class="scn-clock-value">00:18</strong><small class="scn-clock-caption">期限の根拠：画面がそう言っている</small></div><div class="scn-update-filename"><span>推奨ファイル</span><code>shoki_patch_FINAL_final.exe</code></div><div class="scn-choice-stack"><button type="button" class="f-button scn-update-now">急いで、ここから更新する ' + arrow + '</button><button type="button" class="f-secondary scn-update-official">いったん閉じて、公式の設定から確認</button></div></div></section><p class="scn-microcopy">架空のOSの遊びです。端末の状態を診断したり、更新ファイルを配布したりしません。</p>');
+    game.every(function () {
+      remaining = Math.max(0, remaining - 1);
+      game.$('.scn-clock-value').textContent = '00:' + String(remaining).padStart(2, '0');
+      if (remaining === 0) {
+        game.$('.scn-clock-caption').textContent = '0秒になりました。画面の勢いだけでした。';
+        game.stopTimers();
+      }
+    }, 1000);
+    function finish(official) {
+      if (selected || !game.alive()) return;
+      selected = true;
+      game.stopTimers();
+      game.sound();
+      if (!official) { reveal(false); return; }
+      game.render('<div class="scn-progress"><span>02 / 確認する入口を選び直す</span><span>落ち着いてきた</span></div><section class="scn-settings"><span class="scn-settings-icon" aria-hidden="true">⚙</span><span class="scn-kicker">正気OS / 架空の公式設定</span><h2>設定から、確認。</h2><div class="scn-settings-breadcrumb">設定 <span>›</span> システム <span>›</span> 更新</div><div class="scn-settings-row"><span>現在の状態</span><strong>架空の確認画面です</strong></div><div class="scn-settings-row"><span>さっきのページ</span><strong>更新の必要性を、ここでは確認できません</strong></div><p>見知らぬ通知の中のボタンを離れて、<b>普段使うOS・アプリの設定</b>から確認する流れです。</p><button type="button" class="f-button scn-wide scn-update-explain">さっきの緊急通知、何だった？ ' + arrow + '</button></section>');
+      game.on(game.$('.scn-update-explain'), 'click', function () { reveal(true); });
+      game.focus('.scn-update-explain');
+    }
+    function reveal(official) {
+      game.reveal({
+        mark: '緊急度 −99',
+        title: official ? '更新より先に、<br>入口を更新した。' : 'カウントダウンは、<br>発信元の証明にならない。',
+        line: official ? '「急げ」という声から一歩離れて、確認する場所を自分で選べました。' : '「今すぐ」は、考える時間を奪うためにも使えます。派手な警告だけでは、本物か分かりません。',
+        evidence: ['この通知は<b>架空のページによる誘導</b>。端末の感染や不具合を確認したものではありません。', '正規の更新が必要な場合もあります。<b>通知内のリンクに頼らず、普段の設定画面から</b>確かめます。'],
+        lesson: '見知らぬ更新通知は、公式の設定画面から確認する。',
+        afterthought: '正気はアップデート済み。パッチファイルは、出番なし。'
+      });
+    }
+    game.on(game.$('.scn-update-now'), 'click', function () { finish(false); });
+    game.on(game.$('.scn-update-official'), 'click', function () { finish(true); });
+    return game.close;
+  };
+
+  window.FieldModules.wifi = function (container, api) {
+    var game = setup(container, api, 'wifi');
+    var connected = false;
+    game.render('<div class="scn-progress"><span>01 / 無料の電波を発見</span><span>目安 20秒</span></div><section class="scn-wifi-poster"><div class="scn-wifi-poster-top"><strong>無料Wi-Fi</strong><span>架空の接続案内</span></div><svg class="scn-wifi-symbol" viewBox="0 0 220 150" aria-hidden="true"><path d="M18 44Q110-31 202 44M45 77Q110 23 175 77M75 109Q110 80 145 109" fill="none" stroke="#191a17" stroke-width="17" stroke-linecap="round"/><circle cx="110" cy="136" r="11" fill="#191a17"/></svg><h2>最強無料<br>Wi-Fi</h2><p class="scn-wifi-tagline">電波は強い。<br>要求は、もっと強い。</p><div class="scn-wifi-specs"><span>SSID</span><strong>PUDDING_FREE<br><small>（架空）</small></strong><span>公称速度</span><strong>気合い 5本</strong></div><button type="button" class="f-button scn-wide scn-wifi-open">架空の接続案内を見る ' + arrow + '</button></section>');
+    function open() {
+      if (connected || !game.alive()) return;
+      connected = true; game.sound();
+      game.render('<div class="scn-progress"><span>02 / 接続の条件を点検</span><span>実際には接続しません</span></div><section class="scn-wifi-portal"><div class="scn-wifi-ticket-header"><span aria-hidden="true">⌁</span><strong>PUDDING_FREE</strong><small>架空のWi-Fi案内ページ</small></div><h2>つなぐだけ、<br>のはずですが。</h2><p>案内ページに、こんな項目が並んでいました。<br><strong>最も立ち止まって確認したい項目</strong>を選んでください。</p><div class="scn-wifi-options"><button type="button" data-scn-wifi="ssid"><span>01 / ネットワーク名</span><strong>PUDDING_FREE</strong><small>SSIDが長い</small></button><button type="button" data-scn-wifi="password"><span>02 / 接続前の要求</span><strong>学校メールの<br>パスワードを入力</strong><small>別サービスの認証情報</small></button><button type="button" data-scn-wifi="signal"><span>03 / 接続品質</span><strong>電波表示が5本</strong><small>アンテナが元気</small></button></div><p class="scn-microcopy">文字はすべて固定表示。パスワードの入力欄はありません。</p></section>');
+      container.querySelectorAll('[data-scn-wifi]').forEach(function (button) {
+        game.on(button, 'click', function () {
+          var correct = button.dataset.scnWifi === 'password';
+          game.reveal({
+            mark: '電波 ≠ 信頼',
+            title: correct ? '電波よりも、<br>要求を見ていた。' : '強い電波に、<br>強い要求が混ざっていた。',
+            line: correct ? '接続の案内なのに、別サービスの鍵を欲しがっている。そこが確認ポイントです。' : '今回の確認ポイントは「学校メールのパスワード」。名前の長さやアンテナの本数ではありません。',
+            evidence: ['<b>Wi-Fi専用の接続情報</b>と、メールなど<b>別サービスのパスワード</b>を区別します。', '正規の認証方法は提供元によって違います。不明なページで渡す前に、<b>会場の案内や運営に確認</b>します。'],
+            lesson: 'Wi-Fi案内で別サービスのパスワードを求められたら、提供元に確認する。',
+            afterthought: 'アンテナが5本あっても、信用の残高は表示されません。'
+          });
+        });
+      });
+      game.focus('[data-scn-wifi="ssid"]');
+    }
+    game.on(game.$('.scn-wifi-open'), 'click', open);
+    return game.close;
+  };
+
+  function decorativeCode(seed) {
+    var blocks = '';
+    for (var y = 0; y < 9; y++) {
+      for (var x = 0; x < 9; x++) {
+        if ((x * 11 + y * 7 + x * y + seed) % 5 < 2) blocks += '<rect x="' + (x * 9 + 7) + '" y="' + (y * 9 + 7) + '" width="7" height="7" rx="1"/>';
+      }
+    }
+    return '<svg viewBox="0 0 95 95" aria-hidden="true"><rect width="95" height="95" fill="#fffef9"/><g fill="#191a17">' + blocks + '</g><rect x="30" y="34" width="35" height="27" rx="3" fill="#fffef9"/><text x="47.5" y="53" text-anchor="middle" font-size="13" font-weight="900" fill="#191a17">QR?</text></svg>';
+  }
+  window.FieldModules.sticker = function (container, api) {
+    var game = setup(container, api, 'sticker');
+    var peel = 0;
+    var revealed = false;
+    var drag = null;
+    game.render('<div class="scn-progress"><span>01 / 掲示物を観察</span><span>目安 20秒</span></div><section class="scn-sticker-scene"><div class="scn-sticker-heading"><span class="scn-kicker">貼り紙を見てみよう</span><h2>このQR、<br>二枚あります。</h2><p>角が、少し浮いています。<br><strong>画面の上の紙</strong>をめくってみてください。</p></div><div class="scn-noticeboard"><div class="scn-tape scn-tape-one" aria-hidden="true"></div><div class="scn-tape scn-tape-two" aria-hidden="true"></div><div class="scn-paper-poster"><span class="scn-poster-label">空想高専祭 / 架空の掲示</span><h3>会場マップはこちら</h3><div class="scn-layer-window"><div class="scn-sticker-bottom"><span>下に印刷された案内</span>' + decorativeCode(3) + '<strong>展示マップ</strong><code>map-info.example</code></div><div class="scn-sticker-top"><span>最新マップに変更しました</span>' + decorativeCode(9) + '<strong>今だけ特典つき</strong><code>bonus-ticket.example</code><span class="scn-paper-corner" aria-hidden="true">↗</span></div></div><p class="scn-poster-footnote">コードは画面用の模様です。</p></div></div><label class="scn-peel-label" for="scn-peel-range">上の紙をめくる <output class="scn-peel-value" for="scn-peel-range">0%</output></label><input id="scn-peel-range" class="scn-peel-range" type="range" min="0" max="100" step="1" value="0"><button type="button" class="f-secondary scn-wide scn-peel-button">端をつまんで、めくる ' + arrow + '</button><p class="scn-peel-status" role="status" aria-live="polite">紙をドラッグ、またはつまみ・ボタンでめくれます。</p><div class="scn-sticker-decision" hidden><div class="scn-url-comparison"><span>上の紙 <b>bonus-ticket.example</b></span><span>下の印刷 <b>map-info.example</b></span></div><p><strong>同じマップ案内なのに、宛先が違う。</strong><br>ここで、どうしますか？</p><button type="button" class="f-button scn-wide scn-sticker-ask">開く前に、掲示した人へ確認</button><button type="button" class="scn-plain-button scn-sticker-trust">上の紙が新しそう。そのまま進む</button></div></section>');
+    var topPaper = game.$('.scn-sticker-top');
+    var slider = game.$('#scn-peel-range');
+    function setPeel(value) {
+      if (!game.alive()) return;
+      peel = clamp(value, 0, 100);
+      slider.value = String(Math.round(peel));
+      game.$('.scn-peel-value').textContent = Math.round(peel) + '%';
+      topPaper.style.transform = 'translate(' + (peel * .78) + '%, ' + (-peel * .21) + '%) rotate(' + (peel * .22) + 'deg)';
+      topPaper.style.opacity = String(1 - peel * .0065);
+      topPaper.style.transition = game.quiet() || drag ? 'none' : '';
+      if (peel >= 75 && !revealed) {
+        revealed = true;
+        game.$('.scn-sticker-decision').hidden = false;
+        game.$('.scn-peel-status').textContent = '下にも案内がありました。上と下で、宛先が違います。';
+        game.$('.scn-peel-button').textContent = 'もう一度めくって見る ↗';
+        game.sound();
+      } else if (!revealed) game.$('.scn-peel-status').textContent = peel >= 30 ? 'もう少し。下に、別の文字が見えてきました。' : '紙をドラッグ、またはつまみ・ボタンでめくれます。';
+    }
+    game.on(slider, 'input', function () { setPeel(Number(slider.value)); });
+    game.on(game.$('.scn-peel-button'), 'click', function () { setPeel(100); game.focus('.scn-sticker-ask'); });
+    game.on(topPaper, 'pointerdown', function (event) {
+      if (event.button !== 0 || !game.alive()) return;
+      event.preventDefault();
+      drag = { id: event.pointerId, x: event.clientX, y: event.clientY, initial: peel };
+      try { topPaper.setPointerCapture(event.pointerId); } catch (_) {}
+    });
+    game.on(topPaper, 'pointermove', function (event) {
+      if (!drag || drag.id !== event.pointerId) return;
+      var dx = event.clientX - drag.x, dy = event.clientY - drag.y;
+      setPeel(drag.initial + Math.hypot(dx, dy) / 1.4);
+    });
+    function release(event) {
+      if (!drag || drag.id !== event.pointerId) return;
+      var pointerId = drag.id; drag = null;
+      try { if (topPaper.hasPointerCapture(pointerId)) topPaper.releasePointerCapture(pointerId); } catch (_) {}
+    }
+    game.on(topPaper, 'pointerup', release);
+    game.on(topPaper, 'pointercancel', release);
+    game.on(topPaper, 'lostpointercapture', function () { drag = null; });
+    function finish(checked) {
+      game.reveal({
+        mark: '紙 2枚 / 宛先 2つ',
+        title: checked ? '新しそう、よりも<br>誰が貼ったか。' : '上の紙が、<br>正しい紙とは限らない。',
+        line: checked ? '掲示の見た目だけで決めず、案内の出どころを確かめる選択です。' : '今回の仕掛けは、見慣れた案内の上から別の宛先へ誘導することでした。',
+        evidence: ['<b>上貼り＝不正、とは断定できません。</b>正式な貼り替えもあります。気になったら掲示元へ。', 'QRを読んだだけで「侵害された」という意味ではありません。<b>表示された宛先や、その後の要求</b>も確認します。'],
+        lesson: 'QRの掲示に違和感があったら、先に掲示元へ確認する。',
+        afterthought: '現物の紙は勝手にはがさず、運営へ。めくるのは、この画面だけ。'
+      });
+    }
+    game.on(game.$('.scn-sticker-ask'), 'click', function () { finish(true); });
+    game.on(game.$('.scn-sticker-trust'), 'click', function () { finish(false); });
+    return function () {
+      if (drag) { try { if (topPaper.hasPointerCapture(drag.id)) topPaper.releasePointerCapture(drag.id); } catch (_) {} }
+      drag = null; game.close();
+    };
+  };
+}());
+
+</script>
+<script>
+(function () {
+  'use strict';
+  window.FieldModules = window.FieldModules || {};
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  const sampleRoom = `<svg viewBox="0 0 720 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="720" height="900" fill="#e1e5d9"/><path d="M0 0H720V505H0Z" fill="#ebece3"/><path d="M0 505H720V900H0Z" fill="#c8ccbc"/><path d="M0 900L285 505M180 900L323 505M540 900L397 505M720 900L435 505M0 582H720M0 692H720M0 845H720" fill="none" stroke="#a9ae9b" stroke-width="2"/><path d="M0 0L183 107V505H0Z" fill="#d4dacd"/><path d="M720 0L553 107V505H720Z" fill="#d8dece"/><rect x="225" y="142" width="269" height="210" rx="4" fill="#b5c0b2" stroke="#191a1740" stroke-width="2"/><rect x="239" y="156" width="241" height="182" fill="#d9ebda"/><path d="M359 156V338M239 247H480" stroke="#b5c0b2" stroke-width="8"/><path d="M239 311L310 252L352 278L417 216L480 275V338H239Z" fill="#b6d0b6"/><rect x="65" y="247" width="94" height="159" rx="3" fill="#c4adff" stroke="#191a17" stroke-width="2"/><text x="112" y="283" text-anchor="middle" fill="#191a17" font-size="13" font-weight="700">第0展示室</text><text x="112" y="325" text-anchor="middle" fill="#191a17" font-size="28" font-weight="900">正気</text><text x="112" y="358" text-anchor="middle" fill="#191a17" font-size="28" font-weight="900">不在</text><path d="M88 378H135M129 372L135 378L129 384" fill="none" stroke="#191a17" stroke-width="2"/><rect x="574" y="264" width="84" height="135" fill="#d7ff3f" stroke="#191a17" stroke-width="2" transform="rotate(5 616 331)"/><text x="615" y="311" text-anchor="middle" fill="#191a17" font-size="13" font-weight="700">技術はある</text><text x="615" y="334" text-anchor="middle" fill="#191a17" font-size="13" font-weight="700">正気はない</text><path d="M596 358H634" stroke="#191a17" stroke-width="2"/><rect x="221" y="461" width="281" height="14" rx="3" fill="#a1aa92"/><path d="M235 475V508M485 475V508" stroke="#879179" stroke-width="9"/><text x="360" y="827" text-anchor="middle" fill="#6c7661" font-size="16" font-family="monospace" letter-spacing="5">架空の会場</text></svg>`;
+  const tomb = `<svg viewBox="0 0 240 300" aria-hidden="true"><ellipse cx="120" cy="279" rx="100" ry="13" fill="#191a1728"/><path d="M42 245V92Q42 27 120 27Q198 27 198 92V245Z" fill="#33382f" stroke="#191a17" stroke-width="4"/><path d="M53 239V93Q53 40 120 40Q187 40 187 93V239Z" fill="none" stroke="#a2aa90" stroke-width="1.5"/><path d="M111 61H129M120 53V70" stroke="#d7ff3f" stroke-width="2"/><text x="120" y="99" text-anchor="middle" fill="#f4f2e9" font-size="15" font-weight="700">ここに</text><text x="120" y="154" text-anchor="middle" fill="#d7ff3f" font-size="49" font-weight="900">理性</text><text x="120" y="183" text-anchor="middle" fill="#f4f2e9" font-size="15" font-weight="700">ねむる</text><path d="M80 200H160" stroke="#a2aa90"/><text x="120" y="221" text-anchor="middle" fill="#c4adff" font-size="12" font-family="monospace" class="cam-tomb-residue">理性の行方：不明</text><path d="M26 245H214V265H26Z" fill="#626b57" stroke="#191a17" stroke-width="3"/><path d="M14 265H226V280H14Z" fill="#899279" stroke="#191a17" stroke-width="3"/><g class="cam-flowers"><path d="M32 269L26 221M41 270L48 238M199 270L207 223M189 269L181 238" stroke="#415b36" stroke-width="4"/><path d="M30 248Q6 237 15 257M195 250Q220 242 213 261" fill="#5e843f" stroke="#415b36" stroke-width="1.5"/><g fill="#c4adff" stroke="#191a17" stroke-width="1.5"><circle cx="26" cy="211" r="9"/><circle cx="17" cy="219" r="9"/><circle cx="35" cy="219" r="9"/><circle cx="26" cy="229" r="9"/></g><circle cx="26" cy="220" r="6" fill="#d7ff3f" stroke="#191a17" stroke-width="1.5"/><g fill="#ffad8f" stroke="#191a17" stroke-width="1.5"><circle cx="207" cy="211" r="9"/><circle cx="198" cy="219" r="9"/><circle cx="216" cy="219" r="9"/><circle cx="207" cy="229" r="9"/></g><circle cx="207" cy="220" r="6" fill="#d7ff3f" stroke="#191a17" stroke-width="1.5"/><g fill="#d7ff3f" stroke="#191a17" stroke-width="1.5"><path d="M48 226L53 235L63 237L54 244L54 254L45 248L36 251L39 241L33 233L43 233Z"/><path d="M182 226L187 235L197 237L188 244L188 254L179 248L170 251L173 241L167 233L177 233Z"/></g></g></svg>`;
+
+  function mountCameraExperience(container, api, mode) {
+    const isUnit = mode === 'unit';
+    const abort = new AbortController();
+    let alive = true, stream = null, requestPending = false, pendingCanceled = false, cameraEpoch = 0;
+    let xPosition = 50, yPosition = isUnit ? 40 : 56, captured = 0, offerings = 0, completed = false;
+    let drag = null, flowerFrame = 0, resizeObserver = null;
+    container.innerHTML = `
+      <section class="cam-experience ${isUnit ? 'cam-unit-mode' : 'cam-reason-mode'}">
+        <header class="cam-heading"><p class="cam-kicker">カメラで遊ぶ / ${isUnit ? '空中単位' : '理性の墓'}</p><h2>${isUnit ? '単位、落ちてる。<br>拾っていいとは言ってない。' : 'ここに理性ねむる。<br>起こさないでください。'}</h2><p>${isUnit ? '空中の「単位」を3つタップして回収。<br>認定されるかどうかは、別の話です。' : '会場の好きな場所に、理性の墓を置こう。<br>悪ふざけに全力だった理性へ、そっと供養を。'}</p></header>
+        <div class="cam-layout">
+          <div class="cam-stage-wrap">
+            <div class="cam-stage" aria-label="${isUnit ? '空中単位を捕まえる' : '理性の墓を配置する'}合成画面">
+              <div class="cam-sample">${sampleRoom}</div>
+              <video class="cam-video" muted autoplay playsinline aria-label="端末の背面カメラ映像" hidden></video>
+              <div class="cam-stage-top"><span class="cam-background-label"><i></i><b>デモ背景</b></span><span class="cam-stage-counter">${isUnit ? '回収 0 / 3' : '理性：消息不明'}</span></div>
+              ${isUnit ? '<button type="button" class="cam-object cam-unit-object" aria-label="空中の単位を捕まえる"><span class="cam-unit-float"><span class="cam-credit-top">認定されていない単位</span><span class="cam-credit-word">単位</span><span class="cam-credit-orbit">✳</span><span class="cam-credit-bottom">押すと回収</span></span></button>' : '<div class="cam-object cam-tomb-object" role="img" aria-label="ここに理性ねむる、と刻まれた墓碑。位置は下の操作バーでも変更できます。">' + tomb + '</div>'}
+              <div class="cam-scene-sticker" aria-hidden="true">${isUnit ? '単位は<br>概念です。' : '技術はある。<br>理性はない。'}</div>
+              <p class="cam-stage-caption">${isUnit ? '浮いている単位をタップ / Enterでも回収' : '墓碑をドラッグして移動 / 下の位置バーでも操作'}</p>
+            </div>
+            <p class="cam-overlay-note">カメラの映像の上に絵を重ねています。床を認識したり、その場所に固定したりはしません。</p>
+          </div>
+          <div class="cam-panel">
+            <div class="cam-camera-block"><span class="cam-control-kicker">背景を変える</span><div class="cam-camera-actions"><button type="button" class="f-button cam-camera-start">カメラを使う <span>↗</span></button><button type="button" class="f-secondary cam-camera-stop" disabled>カメラ停止</button></div><p class="cam-permission-note">映像はこの画面に重ねるだけ。録画・送信しません。</p><p class="cam-camera-status" role="status" aria-live="polite">デモ背景で遊べます。カメラを使う場合は、上のボタンから。</p></div>
+            ${isUnit ? '<div class="cam-mission"><span class="cam-control-kicker">単位を集める</span><strong>3つ集めれば、<br>何かがわかる。</strong><div class="cam-credit-slots" aria-label="回収した単位"><span>?</span><span>?</span><span>?</span></div><p>大きな「単位」が回収ボタンです。<br>デモ背景でも最後まで遊べます。</p></div>' : '<div class="cam-placement"><span class="cam-control-kicker">墓碑の位置</span><label class="cam-range-label" for="cam-x"><span>左右の位置</span><output class="cam-x-output">50</output></label><input class="cam-range" id="cam-x" type="range" min="0" max="100" step="1" value="50"><div class="cam-range-ends"><span>左</span><span>右</span></div><label class="cam-range-label" for="cam-y"><span>上下の位置</span><output class="cam-y-output">56</output></label><input class="cam-range" id="cam-y" type="range" min="0" max="100" step="1" value="56"><div class="cam-range-ends"><span>上</span><span>下</span></div></div>'}
+            <div class="cam-size-control"><label class="cam-range-label" for="cam-scale"><span>${isUnit ? '単位の存在感' : '墓碑の存在感'}</span><output class="cam-size-output">100%</output></label><input class="cam-range" id="cam-scale" type="range" min="70" max="125" step="1" value="100"><div class="cam-range-ends"><span>控えめ 70%</span><span>堂々 125%</span></div></div>
+            ${isUnit ? '<button type="button" class="f-secondary cam-retry" hidden>未認定単位をもう一度拾う ↺</button>' : '<button type="button" class="f-button cam-offer">理性を供養する <span>✳</span></button><p class="cam-offer-note">花は咲きます。理性は戻りません。</p>'}
+          </div>
+        </div>
+        <p class="cam-play-status" role="status" aria-live="polite">${isUnit ? '最初の単位を発見。証明書は見当たりません。' : '場所と大きさを決めたら、理性に花を。'}</p>
+        <div class="cam-result" hidden><span class="cam-result-kicker">${isUnit ? '回収結果' : '供養完了'}</span><h3>${isUnit ? '認定された単位：<strong>0</strong>' : '理性残量：<strong>0%</strong>'}</h3><p>${isUnit ? '回収したのは、単位の見た目でした。<br>履修登録は通常どおりお願いします。' : '理性は失いました。制作意欲は残っています。<br>ここから先は、止める人がいません。'}</p></div>
+        <div class="cam-footer"><p>カメラなしでも体験できます。別の画面へ移るとカメラは止まります。</p><button type="button" class="f-secondary cam-home">体験一覧へ ←</button></div>
+      </section>`;
+    const $ = selector => container.querySelector(selector);
+    const root = $('.cam-experience'), stage = $('.cam-stage'), object = $('.cam-object'), video = $('.cam-video');
+    const cameraStart = $('.cam-camera-start'), cameraStop = $('.cam-camera-stop'), cameraStatus = $('.cam-camera-status');
+    const scaleInput = $('#cam-scale'), xInput = $('#cam-x'), yInput = $('#cam-y');
+    video.muted = true;
+    video.playsInline = true;
+
+    function stopTracks(target) {
+      if (!target) return;
+      for (const track of target.getTracks()) {
+        try { if (track.readyState !== 'ended') track.stop(); } catch (_) {}
+      }
+    }
+    function syncCameraButtons() {
+      if (!alive) return;
+      cameraStart.disabled = requestPending || Boolean(stream);
+      cameraStop.disabled = !stream && (!requestPending || pendingCanceled);
+      cameraStart.textContent = stream ? 'カメラ使用中' : requestPending ? '許可画面を確認中…' : 'カメラを使う ↗';
+    }
+    function stopCamera(message) {
+      cameraEpoch++;
+      pendingCanceled = requestPending;
+      const previous = stream;
+      stream = null;
+      try { video.pause(); } catch (_) {}
+      video.srcObject = null;
+      stopTracks(previous);
+      if (!alive) return;
+      video.hidden = true;
+      root.classList.remove('cam-is-live');
+      $('.cam-background-label b').textContent = 'デモ背景';
+      if (message) cameraStatus.textContent = message;
+      syncCameraButtons();
+    }
+    async function startCamera() {
+      if (!alive || requestPending || stream) return;
+      if (!window.isSecureContext || !navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== 'function') {
+        cameraStatus.textContent = 'この環境ではカメラを使えません。デモ背景で、そのまま遊べます。';
+        return;
+      }
+      if (document.hidden) return;
+      requestPending = true;
+      pendingCanceled = false;
+      const token = ++cameraEpoch;
+      let acquired = null;
+      cameraStatus.textContent = '背面カメラの許可を確認しています。録画・送信はしません。';
+      syncCameraButtons();
+      try {
+        acquired = await navigator.mediaDevices.getUserMedia({video:{facingMode:{exact:'environment'}},audio:false});
+        if (!alive || token !== cameraEpoch || document.hidden) { stopTracks(acquired); return; }
+        stream = acquired;
+        video.srcObject = acquired;
+        video.hidden = false;
+        syncCameraButtons();
+        await video.play();
+        if (!alive || token !== cameraEpoch || document.hidden) { stopTracks(acquired); return; }
+        const liveTracks = acquired.getVideoTracks();
+        if (!liveTracks.some(track => track.readyState === 'live')) throw new Error('camera-ended');
+        for (const track of liveTracks) track.addEventListener('ended', () => {
+          if (alive && stream === acquired) stopCamera('カメラの映像が止まりました。デモ背景で続けられます。');
+        }, {once:true,signal:abort.signal});
+        root.classList.add('cam-is-live');
+        $('.cam-background-label b').textContent = 'カメラ合成';
+        cameraStatus.textContent = '背面カメラの映像に重ねています。終わるときは「カメラ停止」。';
+      } catch (error) {
+        stopTracks(acquired);
+        if (alive && token === cameraEpoch) {
+          const denied = error && (error.name === 'NotAllowedError' || error.name === 'SecurityError');
+          stopCamera(denied ? 'カメラは許可されませんでした。デモ背景で、同じように遊べます。' : '背面カメラを使えませんでした。デモ背景で、そのまま遊べます。');
+        }
+      } finally {
+        requestPending = false;
+        if (alive) {
+          pendingCanceled = false;
+          syncCameraButtons();
+        }
+      }
+    }
+    function geometry() {
+      const rect = stage.getBoundingClientRect();
+      const width = rect.width || 360, height = rect.height || width * 1.25;
+      const baseWidth = Math.min(isUnit ? 210 : 225, width * (isUnit ? .45 : .48));
+      const scale = Number(scaleInput.value) / 100;
+      const halfWidth = baseWidth * scale / 2, halfHeight = baseWidth * (isUnit ? 1.15 : 1.25) * scale / 2;
+      const minX = Math.min(width / 2, halfWidth + 12), maxX = Math.max(width / 2, width - halfWidth - 12);
+      const minY = Math.min(height / 2, halfHeight + 62), maxY = Math.max(height / 2, height - halfHeight - 62);
+      return {baseWidth,scale,minX,maxX,minY,maxY};
+    }
+    function positionObject() {
+      if (!alive) return;
+      const bounds = geometry();
+      object.style.width = bounds.baseWidth + 'px';
+      object.style.left = bounds.minX + (bounds.maxX - bounds.minX) * xPosition / 100 + 'px';
+      object.style.top = bounds.minY + (bounds.maxY - bounds.minY) * yPosition / 100 + 'px';
+      object.style.setProperty('--cam-scale', String(bounds.scale));
+      $('.cam-size-output').textContent = scaleInput.value + '%';
+      if (xInput) {
+        xInput.value = String(Math.round(xPosition));
+        yInput.value = String(Math.round(yPosition));
+        $('.cam-x-output').textContent = String(Math.round(xPosition));
+        $('.cam-y-output').textContent = String(Math.round(yPosition));
+      }
+    }
+    function syncMotion() {
+      if (alive) root.classList.toggle('cam-reduced', api.reduced());
+    }
+    function complete() {
+      if (completed) return;
+      completed = true;
+      api.complete(mode);
+    }
+    function catchUnit() {
+      if (!alive || captured >= 3) return;
+      syncMotion();
+      captured++;
+      const slots = container.querySelectorAll('.cam-credit-slots span');
+      slots[captured - 1].textContent = '単';
+      slots[captured - 1].classList.add('cam-collected');
+      $('.cam-credit-slots').setAttribute('aria-label', `単位を${captured}個回収`);
+      $('.cam-stage-counter').textContent = `回収 ${captured} / 3`;
+      api.sound();
+      if (captured < 3) {
+        const next = captured === 1 ? [8,18] : [91,78];
+        xPosition = next[0]; yPosition = next[1];
+        $('.cam-play-status').textContent = captured === 1 ? '1個回収。まだ単位としての効力は確認できません。' : '2個回収。これだけあれば、何も足りません。あと1個。';
+      } else {
+        xPosition = 50; yPosition = 42;
+        object.disabled = true;
+        object.classList.add('cam-unit-finished');
+        $('.cam-credit-top').textContent = '公式な単位ではありません';
+        $('.cam-credit-word').textContent = '0';
+        $('.cam-credit-bottom').textContent = '認定された単位';
+        object.setAttribute('aria-label', '回収完了。認定された単位は0です。');
+        $('.cam-stage-counter').textContent = '認定 0 単位';
+        $('.cam-result').hidden = false;
+        $('.cam-retry').hidden = false;
+        $('.cam-play-status').textContent = '3個回収しました。認定された単位は0。空中にあるものを信用しすぎないでください。';
+        complete();
+        $('.cam-retry').focus({preventScroll:true});
+      }
+      positionObject();
+    }
+    function resetUnits() {
+      captured = 0; xPosition = 50; yPosition = 40;
+      object.disabled = false;
+      object.classList.remove('cam-unit-finished');
+      object.setAttribute('aria-label', '空中の単位を捕まえる');
+      $('.cam-credit-top').textContent = '認定されていない単位';
+      $('.cam-credit-word').textContent = '単位';
+      $('.cam-credit-bottom').textContent = '押すと回収';
+      $('.cam-stage-counter').textContent = '回収 0 / 3';
+      for (const slot of container.querySelectorAll('.cam-credit-slots span')) { slot.textContent = '?'; slot.classList.remove('cam-collected'); }
+      $('.cam-credit-slots').setAttribute('aria-label', '回収した単位は0個');
+      $('.cam-result').hidden = true;
+      $('.cam-retry').hidden = true;
+      $('.cam-play-status').textContent = 'また単位が浮いています。今回は認定されるとは言っていません。';
+      positionObject();
+      object.focus({preventScroll:true});
+    }
+    function offer() {
+      if (!alive) return;
+      syncMotion();
+      offerings++;
+      $('.cam-tomb-residue').textContent = '理性残量：0%';
+      $('.cam-stage-counter').textContent = '理性残量 0%';
+      $('.cam-offer').innerHTML = 'もう一度、手を合わせる <span>✳</span>';
+      $('.cam-result').hidden = false;
+      $('.cam-play-status').textContent = `供養${offerings}回目。花は咲きました。理性残量は、変わらず0%です。`;
+      object.classList.remove('cam-offered');
+      cancelAnimationFrame(flowerFrame);
+      if (api.reduced()) object.classList.add('cam-offered');
+      else flowerFrame = requestAnimationFrame(() => { if (alive) object.classList.add('cam-offered'); });
+      api.sound();
+      complete();
+    }
+    cameraStart.addEventListener('click', startCamera, {signal:abort.signal});
+    cameraStop.addEventListener('click', () => stopCamera(requestPending ? 'カメラ開始を取り消しました。許可画面が残っている場合は閉じてください。デモで続けられます。' : 'カメラを止めました。デモ背景で続けられます。'), {signal:abort.signal});
+    scaleInput.addEventListener('input', () => { syncMotion(); positionObject(); }, {signal:abort.signal});
+    $('.cam-home').addEventListener('click', () => { stopCamera(); api.home(); }, {signal:abort.signal});
+    if (isUnit) {
+      object.addEventListener('click', catchUnit, {signal:abort.signal});
+      $('.cam-retry').addEventListener('click', resetUnits, {signal:abort.signal});
+    } else {
+      xInput.addEventListener('input', () => { xPosition = Number(xInput.value); positionObject(); }, {signal:abort.signal});
+      yInput.addEventListener('input', () => { yPosition = Number(yInput.value); positionObject(); }, {signal:abort.signal});
+      $('.cam-offer').addEventListener('click', offer, {signal:abort.signal});
+      object.addEventListener('pointerdown', event => {
+        if (drag || (event.button !== 0 && event.pointerType !== 'touch')) return;
+        event.preventDefault();
+        drag = {pointer:event.pointerId, clientX:event.clientX, clientY:event.clientY, x:xPosition, y:yPosition, bounds:geometry()};
+        object.setPointerCapture(event.pointerId);
+        object.classList.add('cam-is-dragging');
+      }, {signal:abort.signal});
+      object.addEventListener('pointermove', event => {
+        if (!drag || event.pointerId !== drag.pointer) return;
+        const bounds = drag.bounds;
+        xPosition = clamp(drag.x + (event.clientX - drag.clientX) / Math.max(1, bounds.maxX - bounds.minX) * 100, 0, 100);
+        yPosition = clamp(drag.y + (event.clientY - drag.clientY) / Math.max(1, bounds.maxY - bounds.minY) * 100, 0, 100);
+        positionObject();
+      }, {signal:abort.signal});
+      const endDrag = () => { drag = null; object.classList.remove('cam-is-dragging'); };
+      for (const type of ['pointerup','pointercancel','lostpointercapture']) object.addEventListener(type, endDrag, {signal:abort.signal});
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopCamera('画面が非表示になったため、カメラを止めました。デモ背景で再開できます。');
+      else { syncMotion(); positionObject(); }
+    }, {signal:abort.signal});
+    window.addEventListener('pagehide', () => stopCamera('ページを離れたため、カメラを止めました。'), {signal:abort.signal});
+    window.addEventListener('resize', positionObject, {signal:abort.signal});
+    if (typeof ResizeObserver !== 'undefined') { resizeObserver = new ResizeObserver(positionObject); resizeObserver.observe(stage); }
+    const motionTimer = setInterval(syncMotion, 350);
+    syncMotion();
+    positionObject();
+    return function () {
+      alive = false;
+      drag = null;
+      stopCamera();
+      abort.abort();
+      clearInterval(motionTimer);
+      cancelAnimationFrame(flowerFrame);
+      if (resizeObserver) resizeObserver.disconnect();
+    };
+  }
+  window.FieldModules.unit = (container, api) => mountCameraExperience(container, api, 'unit');
+  window.FieldModules.reason = (container, api) => mountCameraExperience(container, api, 'reason');
+}());
+
+</script>
+<script>
+(() => {
+  'use strict';
+  const entries = [
+    {id:'credit', type:'security', time:'約20秒', title:'無料単位配布センター', description:'無料で8単位もらえるらしい。そんなわけはない。'},
+    {id:'update', type:'security', time:'約20秒', title:'正気OSの緊急更新', description:'今すぐ更新しないと正気のままです、と急かされる。'},
+    {id:'wifi', type:'security', time:'約20秒', title:'最強無料Wi-Fi', description:'電波は強い。でも、つなぐための要求が多すぎる。'},
+    {id:'sticker', type:'security', time:'約20秒', title:'このQR、二枚あります', description:'画面の中の貼り紙をめくる。下にも何かある。'},
+    {id:'unit', type:'camera', time:'約30秒', title:'空中の単位をつかまえる', description:'単位が浮いているので集める。履修には反映されません。'},
+    {id:'reason', type:'camera', time:'約30秒', title:'ここに理性ねむる', description:'景色の中に理性の墓を置いて、供養する。'}
+  ];
+  const main = document.getElementById('field-main');
+  const exit = document.getElementById('field-exit');
+  const motionButton = document.getElementById('field-motion');
+  let reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cleanup = null, active = null;
+  function setMotion() {
+    document.documentElement.classList.toggle('reduce-motion', reduced);
+    motionButton.setAttribute('aria-pressed', String(reduced));
+    motionButton.querySelector('span').textContent = reduced ? '少なめ' : 'あり';
+  }
+  function stop() {
+    if (cleanup) { try { cleanup(); } catch (error) { console.error(error); } cleanup = null; }
+  }
+  function home() { if (location.hash) location.hash = ''; else renderHome(); }
+  function list(type) {
+    return '<ol class="f-list">' + entries.filter(x => x.type === type).map(x =>
+      `<li><a href="#${x.id}" data-scene="${x.id}">${x.title}</a> <small>（${x.time}）</small><p>${x.description}</p></li>`
+    ).join('') + '</ol>';
+  }
+  function renderHome() {
+    stop(); active = null; exit.hidden = true;
+    document.title = '限界散歩 | 高専祭のQRあそび';
+    main.innerHTML = `<h1>限界散歩</h1>
+      <p>高専祭の会場に置くQRから遊べる、短い体験です。<br>好きなものを1つだけでもどうぞ。全部回る必要はありません。</p>
+      <h2>ちょっと怪しいページ</h2>
+      <p>変な案内に付き合ってみると、最後に種明かしがあります。</p>
+      ${list('security')}
+      <h2>カメラで遊ぶ</h2>
+      <p>スマホの景色に文字や絵を重ねます。カメラを使わず、デモ背景でも遊べます。</p>
+      ${list('camera')}
+      <section class="f-memo"><h2>ちょっとだけ覚えて帰ること</h2>
+      <ul><li>リンクを開く前に、宛先を確認する。</li><li>急かされたら、普段使う公式の入口から確かめる。</li><li>入力や権限が、その目的に本当に必要か考える。</li></ul>
+      <p>URLを見ただけで安全と判断できるわけではありません。この展示の画面やサービスは架空です。</p></section>
+      <details class="f-sources"><summary>参考にした資料</summary><ul>
+      <li><a href="https://www.ipa.go.jp/about/ipanews/ipanews202411.html" target="_blank" rel="noopener noreferrer">IPA：フィッシング詐欺にご用心</a></li>
+      <li><a href="https://consumer.ftc.gov/consumer-alerts/2023/12/scammers-hide-harmful-links-qr-codes-steal-your-information" target="_blank" rel="noopener noreferrer">FTC：QRコードのリンクを開く前に</a></li>
+      <li><a href="https://consumer.ftc.gov/consumer-alerts/2026/09/see-qr-code-parked-somewhere-dont-scan-ityet" target="_blank" rel="noopener noreferrer">FTC：QRの上貼りに注意</a></li></ul></details>`;
+  }
+  function mount(id) {
+    const data = entries.find(x => x.id === id);
+    if (!data) { renderHome(); return; }
+    stop(); active = id; exit.hidden = false;
+    document.title = data.title + ' | 限界散歩';
+    main.innerHTML = `<section class="f-stage-shell"><div class="f-stage-titlebar"><h1>${data.title}</h1><button class="f-mini" data-field-restart>もう一度</button></div><div id="field-stage"></div></section>`;
+    const host = document.getElementById('field-stage');
+    try {
+      if (!window.FieldModules?.[id]) throw Error('Field module not loaded: ' + id);
+      cleanup = window.FieldModules[id](host, {reduced: () => reduced, complete: done => { if (active === done) main.dataset.completed = done; }, home, sound: () => {}});
+    } catch (error) {
+      console.error(error);
+      host.innerHTML = '<h2>読み込みに失敗しました</h2><p>「もう一度」を押すか、一覧へ戻ってください。</p>';
+    }
+    window.scrollTo(0, 0); main.focus({preventScroll: true});
+  }
+  function route() {
+    const id = location.hash.slice(1);
+    if (id === 'field-main') { main.focus(); return; }
+    if (id) mount(id); else { renderHome(); window.scrollTo(0, 0); }
+  }
+  document.addEventListener('click', event => {
+    const scene = event.target.closest('[data-scene]');
+    if (scene) { event.preventDefault(); if (active === scene.dataset.scene) mount(active); else location.hash = scene.dataset.scene; return; }
+    if (event.target.closest('[data-field-restart]') && active) mount(active);
+  });
+  exit.addEventListener('click', home);
+  motionButton.addEventListener('click', () => { reduced = !reduced; setMotion(); });
+  window.addEventListener('hashchange', route);
+  window.addEventListener('pagehide', stop);
+  window.addEventListener('pageshow', event => { if (event.persisted) route(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && active) home(); });
+  setMotion(); route();
+})();
+
+</script>
+</body>
+</html>
