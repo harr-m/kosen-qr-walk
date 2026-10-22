@@ -4,6 +4,13 @@
 公開サイト: https://harr-m.github.io/kosen-qr-walk/
 ソース: https://github.com/harr-m/kosen-qr-walk
 
+ゲーム性なしの別案（warning.html）
+https://harr-m.github.io/kosen-qr-walk/warning.html
+QRを開くとすぐに警告と種明かしを読む、1ページ完結の啓発展示です。
+ゲーム、クイズ、点数、カメラ、入力欄、JavaScriptはありません。
+この別案を編集する場合はwarning.htmlを変更してください。
+既存のindex.htmlと6体験のQRの行き先は変更していません。
+
 学生制作の架空体験です。学校の手続き案内や学校公認を示すものではありません。
 来場者のログイン・アプリ導入は不要です。HTML/CSS/JavaScriptだけで動きます。
 GitHub Pagesの無料github.io URLを使用し、サーバー、DB、独自ドメインはありません。
