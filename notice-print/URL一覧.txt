@@ -1,6 +1,6 @@
 苫小牧高専祭 QR体験展示 - 掲示URL一覧
 
 credit	単位が落ちています。	https://harr-m.github.io/kosen-qr-walk/notice/credit.html
-update	正気OSを更新してください。	https://harr-m.github.io/kosen-qr-walk/notice/update.html
-wifi	無料Wi-Fi、あります。	https://harr-m.github.io/kosen-qr-walk/notice/wifi.html
+update	端末の更新が必要です。	https://harr-m.github.io/kosen-qr-walk/notice/update.html
+wifi	高速Wi-Fi、無料開放中。	https://harr-m.github.io/kosen-qr-walk/notice/wifi.html
 mystery	（見出しなし）	https://harr-m.github.io/kosen-qr-walk/notice/mystery.html

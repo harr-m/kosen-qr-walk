@@ -7,8 +7,8 @@
 読むだけの4カ所向け展示（2026-10-23追加）
 一覧: https://harr-m.github.io/kosen-qr-walk/notice/
 単位が落ちています。: https://harr-m.github.io/kosen-qr-walk/notice/credit.html
-正気OSを更新してください。: https://harr-m.github.io/kosen-qr-walk/notice/update.html
-無料Wi-Fi、あります。: https://harr-m.github.io/kosen-qr-walk/notice/wifi.html
+端末の更新が必要です。: https://harr-m.github.io/kosen-qr-walk/notice/update.html
+高速Wi-Fi、無料開放中。: https://harr-m.github.io/kosen-qr-walk/notice/wifi.html
 見出しなしのQR: https://harr-m.github.io/kosen-qr-walk/notice/mystery.html
 一般来場者向けの言葉遣いで、読むだけで完結します。ゲーム、クイズ、点数、カメラ、入力欄はありません。
 OSだけ30秒のカウントダウンがありますが、期限後も何も実行せず、更新・ダウンロードはしません。

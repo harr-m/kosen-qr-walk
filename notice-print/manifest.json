@@ -2,21 +2,25 @@
   {
     "key": "credit",
     "heading": "単位が落ちています。",
-    "url": "https://harr-m.github.io/kosen-qr-walk/notice/credit.html"
+    "url": "https://harr-m.github.io/kosen-qr-walk/notice/credit.html",
+    "caption": "気になったら、読み取ってみてください。"
   },
   {
     "key": "update",
-    "heading": "正気OSを更新してください。",
-    "url": "https://harr-m.github.io/kosen-qr-walk/notice/update.html"
+    "heading": "端末の更新が必要です。",
+    "url": "https://harr-m.github.io/kosen-qr-walk/notice/update.html",
+    "caption": "更新案内はこちら。"
   },
   {
     "key": "wifi",
-    "heading": "無料Wi-Fi、あります。",
-    "url": "https://harr-m.github.io/kosen-qr-walk/notice/wifi.html"
+    "heading": "高速Wi-Fi、無料開放中。",
+    "url": "https://harr-m.github.io/kosen-qr-walk/notice/wifi.html",
+    "caption": "通信量を節約。接続案内はこちら。"
   },
   {
     "key": "mystery",
     "heading": null,
-    "url": "https://harr-m.github.io/kosen-qr-walk/notice/mystery.html"
+    "url": "https://harr-m.github.io/kosen-qr-walk/notice/mystery.html",
+    "caption": null
   }
 ]
